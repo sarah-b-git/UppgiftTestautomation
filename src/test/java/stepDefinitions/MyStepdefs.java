@@ -38,7 +38,6 @@ public class MyStepdefs {
     public void iHaveEnteredADateOfBirth() {
         WebElement bdayField = driver.findElement(By.id("dp"));
         bdayField.sendKeys("12/12/1990");
-
     }
 
     @And("I have entered first name {string}")
@@ -93,7 +92,6 @@ public class MyStepdefs {
 
     @And("I have selected agree to terms and conditions")
     public void iHaveSelectedAgreeToTermsAndConditions() {
-        //WebElement tAndC = driver.findElement(By.id("sign_up_25")); "element not interactable
         WebElement tAndC = driver.findElement(By.cssSelector("label[for='sign_up_25']"));
         tAndC.click();
 
@@ -135,8 +133,6 @@ public class MyStepdefs {
     @Then("I see the missing last name message")
     public void iSeeTheMissingLastNameMessage() {
         String expected = "Last Name is required";
-        //WebElement error = driver.findElement(By.cssSelector("span[for='member_lastname']"));
-        //String actual = error.getText();
         String actual = retrieve(driver, By.cssSelector("span[for='member_lastname']"));
 
         assertEquals(expected, actual);
@@ -145,18 +141,16 @@ public class MyStepdefs {
     @Then("I see the wrong password message")
     public void iSeeTheWrongPasswordMessage() {
         String expected = "Password did not match";
-        //WebElement error = driver.findElement(By.cssSelector("span[for='signupunlicenced_confirmpassword']"));
-        //String actual = error.getText();
         String actual = retrieve(driver, By.cssSelector("span[for='signupunlicenced_confirmpassword']"));
+
         assertEquals(expected, actual);
     }
 
     @Then("I see the terms not checked message")
     public void iSeeTheTermsNotCheckedMessage() {
         String expected = "You must confirm that you have read and accepted our Terms and Conditions";
-        //WebElement error = driver.findElement(By.cssSelector("span[for='TermsAccept']"));
-        //String actual = error.getText();
         String actual = retrieve(driver, By.cssSelector("span[for='TermsAccept']"));
+
         assertEquals(expected, actual);
     }
 
@@ -177,12 +171,4 @@ public class MyStepdefs {
 
     }
 
-
-
-    /*
-    @After
-    public void tearDown() {
-        driver.close();
-    }
-    */
 }

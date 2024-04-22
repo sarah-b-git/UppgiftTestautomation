@@ -16,10 +16,10 @@ Feature: Supporter account registration form
     Then I see the <status> message
 
     Examples:
-    |browser|nameStatus|passStatus|tCStatus|status|
-    |chrome|have      |correctly |have    |confirmation|
-    |chrome|have not  |correctly |have    |missing last name|
-    |safari|have      |incorrectly|have   |wrong password   |
-    |firefox|have      |correctly  |have not|terms not checked|
+      | browser | nameStatus | passStatus  | tCStatus | status            |
+      | chrome  | have       | correctly   | have     | confirmation      |
+      | chrome  | have not   | correctly   | have     | missing last name |
+      | safari  | have       | incorrectly | have     | wrong password    |
+      | firefox | have       | correctly   | have not | terms not checked |
 
 
